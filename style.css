@@ -1,0 +1,48 @@
+body{
+  height: 100%;
+  margin: 0;
+}
+
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  color: cornflowerblue;
+  font-size: 22pt;
+  padding: 12pt;
+  display: flex;
+}
+
+.header-Intro{
+  text-align: left;
+  width: 80%;
+}
+
+.header-link{
+  width: 20%;
+  text-align: right;
+}
+
+.horizontal{
+  display: flex;
+}
+
+.leftHori{
+  width: 60%;
+}
+
+.rightHori{
+  width: 40%;
+  margin-top: 25pt;
+  padding: 40pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  color: white;
+}
+
+.image {
+  background: url("source/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600pt;
+  margin: 0;
+}
