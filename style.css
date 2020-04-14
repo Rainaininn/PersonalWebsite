@@ -3,24 +3,6 @@ body{
   margin: 0;
 }
 
-.header {
-  font-family: Arial, Helvetica, sans-serif;
-  color: cornflowerblue;
-  font-size: 22pt;
-  padding: 12pt;
-  display: flex;
-}
-
-.header-Intro{
-  text-align: left;
-  width: 80%;
-}
-
-.header-link{
-  width: 20%;
-  text-align: right;
-}
-
 .horizontal{
   display: flex;
 }
@@ -28,15 +10,19 @@ body{
 .leftHori{
   width: 60%;
   font-size: 20pt;
+  margin-top: 20vh;
+  /* float: left; */
 }
 
 .rightHori{
   width: 40%;
-  margin-top: 25pt;
-  padding: 40pt;
+  margin-top: 12vh;
+  margin-right: 50pt;
+  width: 400pt;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20pt;
   color: white;
+  line-height: 1.5;
 }
 
 .image {
@@ -44,6 +30,87 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 600pt;
+  height: 100vh;
   margin: 0;
+}
+
+.navigation-bar{
+  width: 100vw;
+  background-color: white;
+  overflow: hidden;
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  color: cornflowerblue;
+  font-size: 18pt;
+}
+
+.nav-1 a{
+  float: left;
+  color: cornflowerblue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18pt;
+}
+
+.nav-1 a:hover{
+  background-color: lightgray;
+}
+
+.nav-1 a.active{
+  font-weight: bold;
+}
+
+.navigation-bar-right {
+  float: right;
+  padding: 14px 16px;
+}
+
+.image-grid{
+  padding: 15pt;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5em 1em;
+}
+
+.grid-part{
+  min-height: 150px;
+  max-width: 30vw;
+  max-height: 50vh;
+}
+
+.white-space{
+  height: 70px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.project{
+  margin-left: 50pt;
+  padding: 20pt;
+  display: flex;
+}
+
+.project-left{
+  float: left;
+}
+
+.project-right{
+  width: 100%;
+  margin-left: 25px;
+  text-align: left;
+  padding: 80px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 15pt;
+}
+
+.project-logo{
+  width: 300px;
+  max-height: 300px;
 }
