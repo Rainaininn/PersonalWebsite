@@ -2,6 +2,8 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     <title>Videos</title>
   </head>
   <body>
@@ -24,18 +26,91 @@
     </div>
     <div class="white-space"></div>
     <div class="image-grid">
-      <video controls class="grid-part center">
+      <!-- <div class="center-landscape"> -->
+      <video controls style="height: 250px;" onclick="openModal();currentSlide(1)" class="center-landscape grid-part-landscape">
         <source src="images/crab.mov" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <video controls class="grid-part center">
+      <!-- </div> -->
+      <video controls style="height: 250px;" onclick="openModal();currentSlide(2)" class="center grid-part-portrait">
         <source src="images/pancake.mov" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <video controls class="grid-part center">
+      <video controls style="height: 250px;" onclick="openModal();currentSlide(3)" class="center-landscape grid-part-landscape">
         <source src="images/mojave.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      
     </div>
+
+    <div id="modal">
+      <!-- <span class="close cursor" onclick="closeModal()">&times;</span> -->
+      <div class="modal-content">
+        <div class="mySlides" >
+          <video controls style="width: 100%;" onclick="openModal();currentSlide(1)" >
+            <source src="images/crab.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="mySlides">
+          <video controls style="height: 100%;" onclick="openModal();currentSlide(2)" class="modal-content-portrait">
+            <source src="images/pancake.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="mySlides">
+          <video controls style="width: 100%;" onclick="openModal();currentSlide(3)">
+            <source src="images/mojave.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      const yy = document.getElementById('modal');
+      yy.addEventListener("click", e=>{ 
+        
+        console.log(e.target);
+        console.log(document.getElementsByClassName("modal-content"));
+        if (e.target.className == "modal-content" ){
+          console.log("Close");
+          document.getElementById("modal").style.display = "none";
+        } else{
+          console.log("Open");
+          document.getElementById("modal").style.display = "block";
+        }
+      });
+
+      var mybutton = document.getElementById("myBtn");
+      offset = 20;
+      body = document.body;
+      docElement = document.documentElement;
+      // var docHeight;
+      var docHeight = Math.min(body.scrollHeight, body.offsetHeight, docElement.clientHeight, docElement.scrollHeight, docElement.offsetHeight);
+      if(docHeight!= 'undefined'){
+        offset = docHeight/4;
+      }
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
+
   </body>
 </html>
